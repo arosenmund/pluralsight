@@ -9,11 +9,12 @@ function Initial-ize{
                      #Connect to VI server:
                      $cred = Get-Credential
                      Connect-VIServer 10.101.1.142 -Credential $cred
-                     #Store list of current VM's to a variable and list by name for later use.
+                    }
+                    
+        #Store list of current VM's to a variable and list by name for later use.
                      $Vms = Get-vm
                      $Vms = $Vms.name
                      $Vms
-                    }
 
 #If you want to take a snap shot of all vm's then use no further filtering.  Alternatively you can
 
