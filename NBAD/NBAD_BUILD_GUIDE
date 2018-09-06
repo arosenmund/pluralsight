@@ -28,9 +28,18 @@ Boot virtual machine to CD and follow through with the installation of CentOS 7 
 Login with the chosen username and password.
 
 #Moloch Base Install
+Download Moloch RPM 1.5
+
+https://molo.ch/#downloads
+Install RPM Package
+>sudo rpm -i "download"
+
+Download Elasticsearch 6.x this was tested with 6.4 successfully.
+
+
 
 Install Elasticsearch
-
+>sudo
 
 Install Moloch
 
