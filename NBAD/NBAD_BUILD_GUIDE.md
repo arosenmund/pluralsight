@@ -8,8 +8,8 @@ Create a virtual machine with whichever hypervisor you feel most comfortable.
 - Oracle Virtual Box free
 - Microsoft Hyper-V free on Win10
 
-VM Hardware Configuration
---------------------------------------------------
+**VM Hardware Configuration**
+```
 Cores:
 Min 4
 Max: 8
@@ -21,7 +21,7 @@ Max: 16gb
 Nic1: NAT virtual network
 Nic2: Bridged to physical collection interface
 Nic3: Bridged to physical collection interface 2
-
+```
 ---------------------------------------------------
 
 # Operating System Installation
