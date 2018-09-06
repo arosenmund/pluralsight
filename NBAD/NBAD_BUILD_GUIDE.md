@@ -29,7 +29,7 @@ Download the latest CentOS 7 iso and mount to Virtual Machine CD Drive
 
 > https://www.centos.org/download/
 
-Boot virtual machine to CD and follow through with the installation of CentOS 7 choosing the "Creative Workstation" Build
+Boot virtual machine to CD and follow through with the installation of CentOS 7 choosing the "Development and Creative Workstation" Build and leave all other settings default.
 
 Login with the chosen username and password.
 
@@ -41,7 +41,7 @@ Download Elasticsearch 6.x rpm this was tested with 6.4 successfully.
 
 ### Install Elasticsearch
 
-  > sudo rpm -i "elasticsearch-rpm"
+  > sudo rpm -i "elasticsearch-rpm(downloaded file name here)"
 
 ### Moloch Base Install
 
@@ -55,11 +55,21 @@ Download Elasticsearch 6.x rpm this was tested with 6.4 successfully.
 
 ### Configure Elastic and Moloch
 
- >
+ Start Elasticsearch with default yaml file configuration.
+ 
+ > sudo systemctl start elasticsearch
+ 
+ verify it started successfully
+ 
+ > sudo systemctl status elasticsearch
+ 
+ Navigate to moloch data folder
+ > cd /data/moloch
+ 
+ Follow the install and configuration instructions in the README file.
+ 
   
 ## NetSA Tools
-
-
 
 
 ### SiLK Install
@@ -81,24 +91,31 @@ Download source here:
 
 ## ELK Stack Install
 
-### Install Docker
-  > sudo yum install docker
+  Install Docker
+    > sudo yum install docker
 
-### Start Docker
-  > sudo systemctl start docker
+  Start Docker
+    > sudo systemctl start docker
+  
+  Docker search elastic
+    > sudo docker elasticsearch
 
-### Docker search elastic
-  > sudo docker elasticsearch
+  Docker search kibana
+    > sudo docker elasticsearch
 
-Docker search kibana
-  > sudo docker elasticsearch
-
-Configure elastic
+  Start docker containers
+  
+  Configure elastic
+  >docker exec -e /bin/bash "elasticdocker id #" 
+  
+  Edit elasticsearch.yml config file
   
 
-Configure kibana
-
-
+  Configure kibana
+  >docker exec -e /bin/bash "kibanadocker id #"
+  
+  
+  Restart docker containers
 Verify Kibana & elastic install by browsing to http://localhost:5601
 
 
@@ -107,9 +124,9 @@ Install packet beats
 
 ## Wireshark
 
->sudo yum install wireshark
+>sudo yum install wireshark-gnome
 
-
+-------------------------------------------------------------------------------------------------------------------
 
 All set!
 
