@@ -24,7 +24,7 @@ Nic3: Bridged to physical collection interface 2
 ```
 ---------------------------------------------------
 
-# Operating System Installation
+## Operating System Installation
 
 Download the latest CentOS 7 iso and mount to Virtual Machine CD Drive
 
@@ -34,36 +34,36 @@ Boot virtual machine to CD and follow through with the installation of CentOS 7 
 
 Login with the chosen username and password.
 
-# MOLOCH
+## MOLOCH
 
 Download Elasticsearch 6.x rpm this was tested with 6.4 successfully.
 
   https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.4.0.rpm
 
-## Install Elasticsearch
+### Install Elasticsearch
 
   > sudo rpm -i "elasticsearch-rpm"
 
-## Moloch Base Install
+### Moloch Base Install
 
-  Download Moloch RPM 1.5.2
+  #### Download Moloch RPM 1.5.2
 
     https://molo.ch/#downloads
 
-  Install RPM Package
+  #### Install RPM Package
 
    > sudo rpm -i "moloch 1.5.2"
 
-# Configure Elastic and Moloch
+### Configure Elastic and Moloch
 
->
+ >
   
-# NetSA Tools
+## NetSA Tools
 
 
 
 
-## SiLK Install
+### SiLK Install
   Download source here:
 
     https://tools.netsa.cert.org/silk/download.html
@@ -71,7 +71,7 @@ Download Elasticsearch 6.x rpm this was tested with 6.4 successfully.
   Follow README for make & install instructions.
 
 
-## YAF Install
+### YAF Install
 
 Download source here:
 
@@ -80,15 +80,15 @@ Download source here:
   Follow README for make & install instructions.
 
 
-# ELK Stack Install
+## ELK Stack Install
 
-## Install Docker
+### Install Docker
   > sudo yum install docker
 
-## Start Docker
+### Start Docker
   > sudo systemctl start docker
 
-# Docker search elastic
+### Docker search elastic
   > sudo docker elasticsearch
 
 Docker search kibana
@@ -106,7 +106,9 @@ Verify Kibana & elastic install by browsing to http://localhost:5601
 Install packet beats
 
 
-#Wireshark
+## Wireshark
+
+>sudo yum install wireshark
 
 
 
