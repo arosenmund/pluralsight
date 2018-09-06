@@ -1,5 +1,61 @@
 Nbad Build Guide
 
-Create virtual machine
+#Virtual Machine Build
 
-Download centos 7 and install creative workstaion here
+Create a virtual machine with whichever hypervisor you feel most comfortable.
+
+VMware Workstation 14 PRO
+Oracle Virtual Box
+Microsoft Hyper-V
+
+Cores:
+Min 4
+Max: 8
+
+Ram:
+Min: 4gb
+Max: 16gb
+
+Nic1: NAT virtual network
+Nic2: Bridged to physical collection interface
+Nic3: Bridged to physical collection interface 2
+
+
+Download the latest CentOS 7 iso and mount to Virtual Machine CD Drive
+
+Boot virtual machine to CD and follow through with the installation of CentOS 7 choosing the "Creative Workstation" Build
+
+Login with the chosen username and password.
+
+#Moloch Base Install
+
+Install Elasticsearch
+
+
+Install Moloch
+
+#NetSA Tools
+
+SiLK Install
+
+YAF Install
+
+#ELK Stack Install
+
+Install Docker
+Start Docker
+Docker search elastic
+Docker search kibana
+
+Configure elastic
+Configure kibana
+
+Verify Kibana & elastic install by browsing to http://localhost:5601
+
+Install packet beats
+
+#Wireshark
+
+
+
+All set!
