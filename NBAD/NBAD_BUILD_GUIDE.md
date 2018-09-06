@@ -47,7 +47,7 @@ Download Elasticsearch 6.x rpm this was tested with 6.4 successfully.
 
   #### Download Moloch RPM 1.5.2
 
-    https://molo.ch/#downloads
+[Moloch Downloads](https://molo.ch/#downloads)
 
   #### Install RPM Package
 
