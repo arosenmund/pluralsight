@@ -1,6 +1,6 @@
-Nbad Build Guide
+#Nbad Build Guide
 
-#Virtual Machine Build
+##Virtual Machine Build
 
 Create a virtual machine with whichever hypervisor you feel most comfortable.
 
