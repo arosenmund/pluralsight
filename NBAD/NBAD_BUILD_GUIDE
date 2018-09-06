@@ -4,10 +4,12 @@ Nbad Build Guide
 
 Create a virtual machine with whichever hypervisor you feel most comfortable.
 
-VMware Workstation 14 PRO
-Oracle Virtual Box
-Microsoft Hyper-V
+- VMware Workstation 14 PRO - this is my go to and what these configurations have been tested with
+- Oracle Virtual Box free
+- Microsoft Hyper-V free on Win10
 
+VM Hardware Configuration
+--------------------------------------------------
 Cores:
 Min 4
 Max: 8
@@ -19,7 +21,9 @@ Max: 16gb
 Nic1: NAT virtual network
 Nic2: Bridged to physical collection interface
 Nic3: Bridged to physical collection interface 2
+---------------------------------------------------
 
+#Operating System Installation
 
 Download the latest CentOS 7 iso and mount to Virtual Machine CD Drive
 
