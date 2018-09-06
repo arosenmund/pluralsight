@@ -9,26 +9,25 @@ Create a virtual machine with whichever hypervisor you feel most comfortable.
 - Microsoft Hyper-V free on Win10
 
 **VM Hardware Configuration**
-```
-Cores:
-Min 4
-Max: 8
 
-Ram:
-Min: 4gb
-Max: 16gb
+Hardware | Min | Max
+-------- | --- |  ---
+Cores | 4 | 8 
+Ram | 4GB | 16 GB
 
-Nic1: NAT virtual network
-Nic2: Bridged to physical collection interface
-Nic3: Bridged to physical collection interface 2
-```
+NetAdapter | Network Assigned
+---------- | ----------------
+vmnic1 | NAT virtual network
+vmnic2 | Bridged to collection interface 1
+vmnic3 | Bridged to collection interface 2
+
 ---------------------------------------------------
 
 ## Operating System Installation
 
 Download the latest CentOS 7 iso and mount to Virtual Machine CD Drive
 
-https://www.centos.org/download/
+> https://www.centos.org/download/
 
 Boot virtual machine to CD and follow through with the installation of CentOS 7 choosing the "Creative Workstation" Build
 
@@ -38,7 +37,7 @@ Login with the chosen username and password.
 
 Download Elasticsearch 6.x rpm this was tested with 6.4 successfully.
 
-  https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.4.0.rpm
+> https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.4.0.rpm
 
 ### Install Elasticsearch
 
