@@ -42,7 +42,7 @@ Download Elasticsearch 6.x rpm this was tested with 6.4 successfully.
 
 ## Install Elasticsearch
 
-  >sudo rpm -i "elasticsearch-rpm"
+  > sudo rpm -i "elasticsearch-rpm"
 
 ## Moloch Base Install
 
@@ -52,7 +52,7 @@ Download Elasticsearch 6.x rpm this was tested with 6.4 successfully.
 
   Install RPM Package
 
-    >sudo rpm -i "moloch 1.5.2"
+   > sudo rpm -i "moloch 1.5.2"
 
 # Configure Elastic and Moloch
 
@@ -83,16 +83,16 @@ Download source here:
 # ELK Stack Install
 
 ## Install Docker
-  >sudo yum install docker
+  > sudo yum install docker
 
 ## Start Docker
-  >sudo systemctl start docker
+  > sudo systemctl start docker
 
 # Docker search elastic
-  >sudo docker elasticsearch
+  > sudo docker elasticsearch
 
 Docker search kibana
-  >sudo docker elasticsearch
+  > sudo docker elasticsearch
 
 Configure elastic
   
