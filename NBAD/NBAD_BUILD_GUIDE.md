@@ -88,7 +88,9 @@ Download Elasticsearch 6.x rpm this was tested with 6.4 successfully.
   
   *However, this will begin capture and continue to capture at all times during the use of the machine, it will essentially become only a Moloch machine instead of a multi-tiered behavioral analysis machine, and storage may be an issue.*
  
- Verify installation by loggining into http://localhost:8005
+ Verify installation by loggining into http://localhost:8005 and using the previously configured UN:PW
+ 
+ ![Image of Kibana](https://github.com/arosenmund/pluralsight/blob/master/NBAD/Kibana_liscense.PNG)
 
 ----------------------------------------------------
 
@@ -181,7 +183,7 @@ Verify Kibana & elastic install by browsing to http://<kibana address>:5601
 
 At this point you can enable the machine learning liscense under _managment_ and then _Liscense Managment_
 
-
+![Image of Kibana](https://github.com/arosenmund/pluralsight/blob/master/NBAD/Kibana_liscense.PNG)
 
 ----------------------------------------------------
 
