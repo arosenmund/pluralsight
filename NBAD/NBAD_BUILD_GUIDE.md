@@ -90,7 +90,7 @@ Download Elasticsearch 6.x rpm this was tested with 6.4 successfully.
  
  Verify installation by loggining into http://localhost:8005 and using the previously configured UN:PW
  
- ![Image of Kibana](https://github.com/arosenmund/pluralsight/blob/master/NBAD/Kibana_liscense.PNG)
+ ![Image of Moloch](https://github.com/arosenmund/pluralsight/blob/master/NBAD/moloch_up.PNG)
 
 ----------------------------------------------------
 
