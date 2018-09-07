@@ -35,6 +35,8 @@ Login with the chosen username and password.
 
 ## MOLOCH
 
+Moloch is an open source, large scale, full packet capturing, indexing, and database system. Moloch augments your current security infrastructure to store and index network traffic in standard PCAP format, providing fast, indexed access.
+
 Download Elasticsearch 6.x rpm this was tested with 6.4 successfully.
 
 > https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.4.0.rpm
@@ -51,7 +53,7 @@ Download Elasticsearch 6.x rpm this was tested with 6.4 successfully.
 
   #### Install RPM Package
 
-   > sudo rpm -i "moloch 1.5.2"
+   > sudo rpm -i "moloch 1.5.2(downloaded file name here)"
 
 ### Configure Elastic and Moloch
 
@@ -68,9 +70,25 @@ Download Elasticsearch 6.x rpm this was tested with 6.4 successfully.
  
  Follow the install and configuration instructions in the README file.
  
+ After installation is complete.
+ 
+ Start moloch with the following two commands:
+ 
+ > sudo systemctl start molochcapture
+ > sudo systemctl start molochviewer
+ 
+ Option: If you which for moloch to start it self upon start up simpley use:
+ > sudo systemctl enable molochcapture
+ > sudo systemctl enable molochviewer
+  
+  *However, this will begin capture and continue to capture at all times during the use of the machine, it will essentially become only a Moloch machine instead of a multi-tiered behavioral analysis machine, and storage may be an issue.*
+ 
+ Verify installation by loggining into http://localhost:8005
+
   
 ## NetSA Tools
 
+The Network Situational Awareness (NetSA) group at CERT has developed and maintains a suite of open source tools for monitoring large-scale networks using flow data. These tools have grown out of the work of the AirCERT project, the SiLK project and the effort to integrate this work into a unified, standards-compliant flow collection and analysis platform. 
 
 ### SiLK Install
   Download source here:
@@ -81,6 +99,7 @@ Download Elasticsearch 6.x rpm this was tested with 6.4 successfully.
 
 
 ### YAF Install
+Used to convert pcap files to flow files for reading with silk tools like rwfilter.
 
 Download source here:
 
@@ -91,35 +110,66 @@ Download source here:
 
 ## ELK Stack Install
 
+Installing separately from moloch instance. To increase the performance of the standalong machine learning node.
+
   Install Docker
     > sudo yum install docker
 
   Start Docker
     > sudo systemctl start docker
   
-  Docker search elastic
-    > sudo docker elasticsearch
+  Docker pull elastic image
+    > sudo docker pull elasticsearch
 
   Docker search kibana
-    > sudo docker elasticsearch
+    > sudo pull docker elasticsearch
 
-  Start docker containers
-  
+  Create docker containers
+    > sudo docker create elasticsearch
+    
+    > sudo docker create kibana
+    
   Configure elastic
-  >docker exec -e /bin/bash "elasticdocker id #" 
   
+  > sudo docker exec -t -i "elastic conatiner ID#" /bin/bash
+  > bash> vi config/elasticsearch.yml
+
+  Edit with configuration similar to:
+  
+  ```
+  cluster.name: "docker-cluster"
+  network.host: 172.17.0.2 #use the elasticsearch container locla ip
+  
+  #minimum _master_nodes need to be explicitly set when bound on a public IP
+  #set to 1 to allow single node clusters
+  #Details: https://github.com/elastic/elasticsearch/pull/17288
+  discovery.zen.minimum_master_nodes: 1
+  
+  ```
   Edit elasticsearch.yml config file
   
 
   Configure kibana
-  >docker exec -e /bin/bash "kibanadocker id #"
+  > docker exec -t -i "kibana container ID#" /bin/bash
+  > bash> vi config/kibana.yml
   
+  Edit with configuration similar to:
+  
+  ```
+  server.name: kibana
+  server.host: "172.17.0.3" #Kibana containers local ip
+  elasticsearch.url: http://172.17.0.2:9200 #use the elasticsearch container local ip
+  xpack.monitoring.ui.container.elasticsearch.enabled: true
+  
+  ```
   
   Restart docker containers
 Verify Kibana & elastic install by browsing to http://localhost:5601
 
 
 Install packet beats
+
+## Bro
 
 
 ## Wireshark
