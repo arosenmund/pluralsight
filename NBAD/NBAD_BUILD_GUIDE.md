@@ -33,6 +33,8 @@ Boot virtual machine to CD and follow through with the installation of CentOS 7 
 
 Login with the chosen username and password.
 
+----------------------------------------------------
+
 ## MOLOCH
 
 Moloch is an open source, large scale, full packet capturing, indexing, and database system. Moloch augments your current security infrastructure to store and index network traffic in standard PCAP format, providing fast, indexed access.
@@ -85,7 +87,8 @@ Download Elasticsearch 6.x rpm this was tested with 6.4 successfully.
  
  Verify installation by loggining into http://localhost:8005
 
-  
+----------------------------------------------------
+
 ## NetSA Tools
 
 The Network Situational Awareness (NetSA) group at CERT has developed and maintains a suite of open source tools for monitoring large-scale networks using flow data. These tools have grown out of the work of the AirCERT project, the SiLK project and the effort to integrate this work into a unified, standards-compliant flow collection and analysis platform. 
@@ -107,6 +110,7 @@ Download source here:
   
   Follow README for make & install instructions.
 
+----------------------------------------------------
 
 ## ELK Stack Install
 
@@ -169,6 +173,8 @@ Verify Kibana & elastic install by browsing to http://localhost:5601
 
 Install packet beats
 
+----------------------------------------------------
+
 ## Bro
 
 Download the bro source from here:
@@ -190,6 +196,8 @@ Configure, make and make install.
 > sudo make install
 
 Bro is good to go and should work from the command line as referenced in the NBAD course.
+
+----------------------------------------------------
 
 ## Wireshark
 GUI for viewing smaller pcaps graphically.  Lots of great functionality but stores all read file information in memory, so avoid large pcaps.
