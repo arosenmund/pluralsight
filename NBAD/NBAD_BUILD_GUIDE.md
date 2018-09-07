@@ -185,7 +185,7 @@ At this point you can enable the machine learning liscense under _managment_ and
 
 ----------------------------------------------------
 
-##Install packet beats
+## Install packetbeat
 
 Download packet beats rpm here:
 
