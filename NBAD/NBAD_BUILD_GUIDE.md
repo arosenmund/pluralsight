@@ -1,4 +1,4 @@
-# Nbad Build Guide
+# PS-NBAD Build Guide
 
 ## Virtual Machine Build
 
@@ -171,8 +171,28 @@ Install packet beats
 
 ## Bro
 
+Download the bro source from here:
+
+https://www.bro.org/download/index.html
+
+Unpack the tarball
+
+> tar -zxvf bro-2.5.4.tg.gz
+
+Navigate to bro folder.
+
+> cd bro-2.5.4
+
+Configure, make and make install.
+
+> sudo ./configure
+> sudo make
+> sudo make install
+
+Bro is good to go and should work from the command line as referenced in the NBAD course.
 
 ## Wireshark
+GUI for viewing smaller pcaps graphically.  Lots of great functionality but stores all read file information in memory, so avoid large pcaps.
 
 >sudo yum install wireshark-gnome
 
@@ -182,4 +202,4 @@ All set!
 
 You are now the proud owner of the Pluralsight Security Network Behavioral Anomaly Detection suite....PS-NBAD.
 
-No super cool logo yet, but I am open to suggestions.
+No super cool logo yet, but I am open to suggestions.  Please provide commits as necesary for changes, this is hosted on git for a reason and I welcom collaboration.
