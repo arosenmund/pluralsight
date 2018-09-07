@@ -80,8 +80,11 @@ Download Elasticsearch 6.x rpm this was tested with 6.4 successfully.
  > sudo systemctl start molochviewer
  
  Option: If you which for moloch to start it self upon start up simpley use:
+ > sudo systemctl enable elasticsearch
  > sudo systemctl enable molochcapture
  > sudo systemctl enable molochviewer
+ 
+ Don't forget to start elasticsearch before starting the moloch services.
   
   *However, this will begin capture and continue to capture at all times during the use of the machine, it will essentially become only a Moloch machine instead of a multi-tiered behavioral analysis machine, and storage may be an issue.*
  
@@ -116,24 +119,29 @@ Download source here:
 
 Installing separately from moloch instance. To increase the performance of the standalong machine learning node.
 
-  Install Docker
-    > sudo yum install docker
-
-  Start Docker
-    > sudo systemctl start docker
+Install Docker
   
-  Docker pull elastic image
-    > sudo docker pull elasticsearch
+  > sudo yum install docker
 
-  Docker search kibana
-    > sudo pull docker elasticsearch
+Start Docker
+  
+  > sudo systemctl start docker
+  
+Docker pull elastic image
+  
+  > sudo docker pull elasticsearch
 
-  Create docker containers
-    > sudo docker create elasticsearch
+Docker search kibana
+  
+  > sudo pull docker elasticsearch
+
+Create docker containers
+  
+  > sudo docker create elasticsearch
     
-    > sudo docker create kibana
+  > sudo docker create kibana
     
-  Configure elastic
+Configure elastic
   
   > sudo docker exec -t -i "elastic conatiner ID#" /bin/bash
   > bash> vi config/elasticsearch.yml
@@ -150,10 +158,10 @@ Installing separately from moloch instance. To increase the performance of the s
   discovery.zen.minimum_master_nodes: 1
   
   ```
-  Edit elasticsearch.yml config file
-  
 
-  Configure kibana
+  
+Configure kibana
+  
   > docker exec -t -i "kibana container ID#" /bin/bash
   > bash> vi config/kibana.yml
   
@@ -167,11 +175,46 @@ Installing separately from moloch instance. To increase the performance of the s
   
   ```
   
-  Restart docker containers
-Verify Kibana & elastic install by browsing to http://localhost:5601
+Restart docker containers
+
+Verify Kibana & elastic install by browsing to http://<kibana address>:5601
+
+At this point you can enable the machine learning liscense under _managment_ and then _Liscense Managment_
 
 
-Install packet beats
+
+----------------------------------------------------
+
+##Install packet beats
+
+Download packet beats rpm here:
+
+[Packet Beats](https://artifacts.elastic.co/downloads/beats/packetbeat/packetbeat-6.4.0-x86_64.rpm)
+
+Install RPM
+
+  > sudo rpm -i "packet beats download"
+
+Edit packetbeat.yml file
+
+  > sudo vi /etc/packetbeat/packetbeat.yml
+
+Under the section labeled **Outputs** change the ip to the docker elasticsearch ip like this:
+
+  ```
+  output.elasticserch:
+   #Array of hosts to connect to.
+   hosts: ["172.17.0.2:9200"]
+  ```
+Under the section labeled **Kibana** change the ip to the docker kibana ip like this:
+
+  ```
+  setup.kibana:
+
+   #Kibana Host
+   host: "http://172.17.0.3:5601"
+  ```
+Save the file.  Now you can use the packetbeat command to read the pcaps dumped by Moloch into the /data/moloch/raw folder and parse them into the dockerized elkstack for more analysis.
 
 ----------------------------------------------------
 
