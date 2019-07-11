@@ -17,10 +17,7 @@ Ram | 4GB | 16 GB
 
 NetAdapter | Network Assigned
 ---------- | ----------------
-vmnic1 | NAT virtual network
-vmnic2 | Bridged to collection interface 1
-vmnic3 | Bridged to collection interface 2
-
+vmnic1 | Bridged (Same Net as Assets)
 ---------------------------------------------------
 
 ## Operating System Installation
